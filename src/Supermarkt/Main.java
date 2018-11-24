@@ -23,9 +23,8 @@ public class Main {
 
     private static void printPrijsArtikelen(List<Artikel> artikelen) {
         for (Artikel artikel : artikelen) {
-            if (artikel instanceof Artikel) {
-                System.out.println(artikel.getPrijs());
-            }
+            System.out.println(artikel.getPrijs());
         }
+        
     }
 }
