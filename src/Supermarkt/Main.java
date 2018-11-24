@@ -9,6 +9,9 @@ public class Main {
 
         List<Artikel> artikelen = getArtikel();
         printPrijsArtikelen(getArtikel());
+
+        System.out.println(totaalPrijs(artikelen));
+
     }
 
     private static List<Artikel> getArtikel() {
@@ -25,6 +28,13 @@ public class Main {
         for (Artikel artikel : artikelen) {
             System.out.println(artikel.getPrijs());
         }
-        
+    }
+
+    private static double totaalPrijs(List<Artikel> artikelen) {
+        double totaal = 0.0;
+        for (Artikel artikel : artikelen) {
+            totaal = totaal + artikel.getPrijs();
+        }
+        return totaal;
     }
 }
