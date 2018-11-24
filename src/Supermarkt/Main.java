@@ -7,28 +7,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Artikel luiers = new Luiers(10);
-        Artikel robijn = new Robijn(3);
-        Artikel brinta = new Brinta(15);
-        Artikel chinesegroenten = new ChineseGroenten(6);
-        Artikel kwark = new Kwark(7);
+        List<Artikel> artikelen = getArtikel();
 
-
-        System.out.println(((Luiers) luiers).getAantal());
-        System.out.println(((Luiers) luiers).getPrijs());
-
-        // als xx is instanceof Artikel then afrekenmethode?
+        System.out.println(artikelen);
     }
 
-    private static List<Artikel> getArtikel(){
+    private static List<Artikel> getArtikel() {
         List<Artikel> artikelen = new ArrayList<>();
         artikelen.add(new Luiers(10));
-
+        artikelen.add(new Robijn(3));
+        artikelen.add(new Brinta(15));
+        artikelen.add(new ChineseGroenten(6));
+        artikelen.add(new Kwark(7));
         return artikelen;
 
 
     }
-
 
 
 }
