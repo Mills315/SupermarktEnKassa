@@ -2,9 +2,9 @@ package Supermarkt;
 
 public class Kwark extends Food {
 
-        public Kwark(int aantal, String houdbaarheidsdatum) {
+        public Kwark(int aantal, int dagenhoudbaar) {
             this.aantal = aantal;
-            this.houdbaarheidsdatum = houdbaarheidsdatum;
+            this.dagenhoudbaar = dagenhoudbaar;
             this.prijs = (2 * aantal);
         }
 

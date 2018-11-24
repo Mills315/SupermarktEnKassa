@@ -2,9 +2,9 @@ package Supermarkt;
 
 public class ChineseGroenten extends Food {
 
-    public ChineseGroenten(int aantal, String houdbaarheidsdatum) {
+    public ChineseGroenten(int aantal, int dagenhoudbaar) {
         this.aantal = aantal;
-        this.houdbaarheidsdatum = houdbaarheidsdatum;
+        this.dagenhoudbaar = dagenhoudbaar;
         this.prijs = (5.00 * aantal);
     }
 
