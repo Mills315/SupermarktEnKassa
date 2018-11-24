@@ -1,7 +1,7 @@
 package Supermarkt;
 
-public abstract class Artikel {
+public class Artikel {
     protected int aantal;
-
+    protected double prijs;
 
 }

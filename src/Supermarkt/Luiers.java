@@ -1,8 +1,6 @@
 package Supermarkt;
 
-public class Luiers extends Artikel {
-
-    private double prijs;
+public class Luiers extends NonFood {
 
     public Luiers(int aantal) {
         this.aantal = aantal;

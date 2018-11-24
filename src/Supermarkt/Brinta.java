@@ -1,11 +1,10 @@
 package Supermarkt;
 
-public class Brinta extends Artikel {
+public class Brinta extends Food {
 
-    private double prijs;
-
-    public Brinta(int aantal) {
+    public Brinta(int aantal, String houdbaarheidsdatum) {
         this.aantal = aantal;
+        this.houdbaarheidsdatum = houdbaarheidsdatum;
         this.prijs = (2.50 * aantal);
     }
 
