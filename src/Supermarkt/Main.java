@@ -7,11 +7,24 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+        
         List<Artikel> artikelen = getArtikel();
-        //  printPrijsArtikelen(getArtikel());
+        printPrijsArtikelen(getArtikel());
         System.out.println("------+");
         System.out.println(totaalPrijs(artikelen));
+        System.out.println();
+        System.out.println("De boodschappen kosten " + (totaalPrijs(artikelen)));
+        System.out.println("Het wisselgeld is: ");
+        System.out.println();
         betalen(555.55, artikelen);
+        System.out.println();
+        System.out.println("Uw korting is: ");
+        System.out.println();
+        System.out.println(totaalKorting(artikelen));
+        System.out.println();
+        System.out.println();
+
 
         // bedenk manieren om kortingen te verwerken, bijvoorbeeld met modulo en een randomInt/weekdag voor weekdagen/korting
     }
@@ -21,8 +34,8 @@ public class Main {
 
     private static List<Artikel> getArtikel() {
         List<Artikel> artikelen = new ArrayList<>();
-        artikelen.add(new Luiers(10));
-        artikelen.add(new Robijn(3));
+        artikelen.add(new Luiers(7));
+        artikelen.add(new Robijn(15));
         artikelen.add(new Brinta(10, 14));
         artikelen.add(new ChineseGroenten(6, 10));
         artikelen.add(new Kwark(7, 14));
@@ -65,6 +78,8 @@ public class Main {
 
             // wisselgeld heeft meer dan 2 cijfers achter de komma?? heel vreemd.. even vragen aan Gillis/Hans
 
+            // kan eventueel ook andere briefjes toevoegen.. denk aan tientallen eerst delen door 20 tot je minder dan 20 over houdt.. et cetera
+
             System.out.println(wisselgeld);
 
             // aantal divisions met modulo ? dit werkt ook.
@@ -96,9 +111,10 @@ public class Main {
             }
             if (wisselgeld == 0.0) {
                 System.out.println("Hier heeft u:");
-                System.out.println(b100 + " briefjes van 100");
-                System.out.println(b10 + " briefjes van 10");
-                System.out.println(b1 + " munten van 1");
+                System.out.println();
+                System.out.println(b100 + " briefjes van 100 euro");
+                System.out.println(b10 + " briefjes van 10 euro");
+                System.out.println(b1 + " munten van 1 euro");
                 System.out.println(b010 + " munten van 10 cent");
                 System.out.println(b001 + " munten van 1 cent");
             }
@@ -107,5 +123,13 @@ public class Main {
             }
         }
 
+    }
+
+    private static double totaalKorting(List<Artikel> artikelen) {
+        double totaal = 0.0;
+        for (Artikel artikel : artikelen) {
+            totaal = totaal + artikel.getKorting();
+        }
+        return totaal;
     }
 }
