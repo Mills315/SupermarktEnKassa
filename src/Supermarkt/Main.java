@@ -2,15 +2,14 @@ package Supermarkt;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
 
-
-        
         List<Artikel> artikelen = getArtikel();
-        printPrijsArtikelen(getArtikel());
+        printPrijsArtikelen(artikelen);
         System.out.println("------+");
         System.out.println(totaalPrijs(artikelen));
         System.out.println();
@@ -24,21 +23,21 @@ public class Main {
         System.out.println(totaalKorting(artikelen));
         System.out.println();
         System.out.println();
-
-
-        // bedenk manieren om kortingen te verwerken, bijvoorbeeld met modulo en een randomInt/weekdag voor weekdagen/korting
     }
 
 
-    // hier worden artikelen toegevoegd, met aantallen
+    // hier worden artikelen toegevoegd, met aantallen. Er wordt ook een weekdag gegenereerd, heeft invloed op Kwark.
 
     private static List<Artikel> getArtikel() {
+        Random willekeur = new Random();
+        int n = willekeur.nextInt(7) + 1;
+        DagVanDeWeek dag = new DagVanDeWeek(n);
         List<Artikel> artikelen = new ArrayList<>();
         artikelen.add(new Luiers(7));
         artikelen.add(new Robijn(15));
         artikelen.add(new Brinta(10, 14));
         artikelen.add(new ChineseGroenten(6, 10));
-        artikelen.add(new Kwark(7, 14));
+        artikelen.add(new Kwark(7, 14, dag.getDay()));
         return artikelen;
     }
 
@@ -132,4 +131,5 @@ public class Main {
         }
         return totaal;
     }
+
 }
