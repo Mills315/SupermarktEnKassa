@@ -1,4 +1,4 @@
 package Supermarkt;
 
-public class ChineseGroenten {
+public class ChineseGroenten extends Artikel {
 }

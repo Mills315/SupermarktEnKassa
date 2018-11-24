@@ -1,8 +1,7 @@
 package Supermarkt;
 
-public class Luiers {
+public class Luiers extends Artikel {
 
-    private int aantal;
     private double prijs;
 
     public Luiers(int aantal) {

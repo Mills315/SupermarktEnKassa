@@ -1,4 +1,4 @@
 package Supermarkt;
 
-public class Brinta {
+public class Brinta extends Artikel {
 }

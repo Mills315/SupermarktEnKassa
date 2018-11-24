@@ -1,4 +1,4 @@
 package Supermarkt;
 
-public class Kwark {
+public class Kwark extends Artikel {
 }
